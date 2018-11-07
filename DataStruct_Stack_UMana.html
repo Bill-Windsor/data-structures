@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Data Struct - Stack</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		body {
+		margin: 20px;
+		}
+		</style>
+</head>
+<body>
+
+<script>
+
+	function Stack() {
+		this.arr = [];
+	}
+
+	// Add an item onto the stack
+	Stack.prototype.push = function(item) {
+		this.arr.push(item);
+	}
+
+	// Gets and removes an item from the stack
+	Stack.prototype.pop = function() {
+		return this.arr.pop();
+	}
+
+	// Peek method
+	Stack.prototype.peek = function() {
+	return this.arr[this.arr.length-1];
+	}
+
+	// Testing our stack
+	var stack = new Stack();
+	for(var i = 0; i < 1000; i++) {
+		stack.push(i);
+	}
+
+	// We will get the item from the stack now.
+	alert("Item from stack " + stack.pop());  // Returns 999
+
+	// Now we are displaying 3 items from the stack: 999, 998, 997, 996
+	for(var i = 0; i < 3; i++) {
+	alert("Item from stack " + stack.pop());
+	}
+
+	alert(stack.peek());  // Returns 995
+
+	</script>
+
+</body>
+</html>
